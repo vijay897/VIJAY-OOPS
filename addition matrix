@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int row, col, i, j;
+
+    cout << "Enter the number of rows: ";
+    cin >> row;
+
+    cout << "Enter the number of columns: ";
+    cin >> col;
+
+    int mat1[row][col];
+    int mat2[row][col];
+    int res[row][col];
+
+    cout << "Enter the elements of matrix1:" << endl;
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++)
+            cin >> mat1[i][j];
+        cout << endl;
+    }
+
+    cout << "Enter the elements of matrix2:" << endl;
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++)
+            cin >> mat2[i][j];
+        cout << endl;
+    }
+
+    for (i = 0; i < row; i++)
+        for (j = 0; j < col; j++)
+            res[i][j] = mat1[i][j] + mat2[i][j];
+
+    cout << "Sum of matrices:" << endl;
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++)
+            cout << res[i][j] << "\t";
+        cout << endl;
+    }
+
+    return 0;
+}
