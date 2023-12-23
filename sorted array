@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter the elements of the array:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int low = 0;
+    int high = n - 1;
+    int result = -1; 
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] != mid + 1) {
+            high = mid - 1;
+            result = mid + 1; 
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    if (result != -1) {
+        cout << "The smallest element missing in the array is: " << result << endl;
+    } else {
+        cout << "Not found. All elements are present in the array." << endl;
+    }
+
+    return 0;
+}
