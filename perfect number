@@ -1,0 +1,16 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+    int num,sum=0,k;
+    cout<<"enter the number";
+    cin>>num;
+    k = num;
+    for(int i =1;i<=num/2;i++){
+        sum = sum+i;
+    }
+    if(sum == k)
+    cout<<"it is prime number";
+    else
+    cout<<"it is not a prime number";
+}
