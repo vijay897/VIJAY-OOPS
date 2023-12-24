@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class Hello {
+private:
+    int num1;
+    int num2;
+
+public:
+    void data(int a, int b) {
+        num1 = a;
+        num2 = b;
+    }
+
+    void input() {
+        cout << "Enter the num1: ";
+        cin >> num1;
+        cout << "Enter the num2: ";
+        cin >> num2;
+    }
+
+    void findMax() {
+        if (num1 > num2)
+            cout << "Max: " << num1 << endl;
+        else
+            cout << "Max: " << num2 << endl;
+    }
+};
+
+int main() {
+    Hello obj;
+    obj.input();
+    obj.findMax();
+    return 0;
+}
