@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+class hello {
+private:
+    int num;
+    int res;
+
+public:
+    hello() {
+        num ;
+        res = 0;
+    }
+
+    void input() {
+        cout << "Enter the number: ";
+        cin >> num;
+    }
+
+    void setnum() {
+        int originalNum = num;
+        res = 0;
+
+        while (originalNum > 0) {
+            int rem = originalNum % 10;
+            res = res * 10 + rem;
+            originalNum = originalNum / 10;
+        }
+    }
+
+    void display() {
+        cout << "Reversed number: " << res << endl;
+    }
+};
+
+int main() {
+    hello in;
+    in.input();
+    in.setnum();
+    in.display();
+
+    return 0;
+}
