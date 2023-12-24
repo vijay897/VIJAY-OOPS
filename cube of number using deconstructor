@@ -1,0 +1,42 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class hello {
+private:
+    int i, n;
+
+public:
+    hello() {
+        i = 1;
+        n = 0;
+    }
+
+    hello(int p, int q) {
+        i = p;
+        n = q;
+    }
+
+    ~hello() {
+        cout << "Destructor called. Object is going out of scope." << endl;
+    }
+
+    void display() {
+        cout << "Please enter the number:" << endl;
+        cin >> n;
+        for (i = 1; i <= n; i++) {
+            cout << "Cube of " << i << " is: " << (i * i * i) << endl;
+        }
+    }
+};
+
+int main() {
+    int p, q;
+
+    hello object(p, q);
+    hello object2;
+    object.display();
+    getch();
+
+    return 0;
+}
