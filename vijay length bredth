@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class hello{
+  public:
+  int length;
+  int bredth;
+  hello(){
+      length=0;
+      bredth=0;
+  }
+  void input(){
+      cout<<"enter the length ";
+      cin>>length;
+      cout<<"enter the bredth ";
+      cin>>bredth;
+  }
+  void display(){
+      cout<<length<<" "<<bredth<<endl;
+  }
+};
+int main(){
+    hello in;
+    in.input();
+    in.display();
+}
