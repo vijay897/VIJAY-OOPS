@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class Car {
+public:
+
+    static int objectCount;
+    int id;
+    string name;
+    int marks;
+
+    Car() {
+        id = 0;
+        marks = 0;
+        objectCount++;
+    }
+
+    void getInput() {
+        cout << "Enter the Id of the Car: ";
+        cin >> id;
+
+        cout << "Enter the name of the Car: ";
+        cin >> name;
+
+        cout << "Number of Marks (1 - 10): ";
+        cin >> marks;
+    }
+
+    void displayOutput() {
+        cout << "\nId of the Car: " << id << "\nName of the Car: " << name << "\nMarks: " << marks << "\n\n";
+    }
+
+    static void displayObjectCount() {
+        cout << "No. of objects created in the class: " << objectCount << "\n";
+    }
+};
+
+int Car::objectCount = 0;
+
+int main() {
+    const int numberOfCars = 1;
+
+    for (int i = 0; i < numberOfCars; ++i) {
+        Car car;
+        car.getInput();
+        car.displayOutput();
+    }
+
+    Car::displayObjectCount();
+
+    return 0;
+}
