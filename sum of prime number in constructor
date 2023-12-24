@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+class hello {
+private:
+    int start;
+    int end;
+    int sum;
+
+public:
+    hello(int s, int e) {
+        start = s;
+        end = e;
+        sum = 0;
+    }
+
+    ~hello() {
+        cout << "Object is being destroyed." << endl;
+    }
+
+    void findNumbersAndSum() {
+        for (int i = start; i <= end; ++i) {
+            if (i % 9 == 0) {
+                cout << i << " is divisible by 9." << endl;
+                sum += i;
+            }
+        }
+    }
+
+    void displaySum() {
+        cout << "Sum of numbers divisible by 9 between " << start << " and " << end << ": " << sum << endl;
+    }
+};
+
+int main() {
+    int start, end;
+
+    cout << "Enter the starting point of the range: ";
+    cin >> start;
+
+    cout << "Enter the ending point of the range: ";
+    cin >> end;
+
+    hello obj(start, end);
+    obj.findNumbersAndSum();
+    obj.displaySum();
+
+    return 0;
+}
