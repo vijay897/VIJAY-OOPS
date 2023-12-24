@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int i;
+    float mark, sum = 0, avg;
+    cout << "Enter Marks obtained in 4 Subjects: ";
+
+    for (i = 0; i < 4; i++) {
+        cin >> mark;
+        sum += mark;
+    }
+
+    avg = sum / 4;
+    
+    cout << "\nGrade = ";
+
+    if (avg >= 75) {
+        cout << "Distinction";
+    } else if (avg >= 60 && avg < 75) {
+        cout << "First Division";
+    } else if (avg >= 50 && avg < 60) {
+        cout << "Second Division";
+    } else if (avg >= 40 && avg < 50) {
+        cout << "Third Division";
+    } else {
+        cout << "Fail";
+    }
+
+    cout << endl;
+    return 0;
+}
