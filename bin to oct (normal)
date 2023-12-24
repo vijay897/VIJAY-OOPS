@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int binary, rem, octal = 0, b = 1;
+
+    cout << "Enter the binary number : ";
+    cin >> binary;
+
+    int decimal = 0, base = 1;
+
+    while (binary > 0) {
+        int rem = binary % 10;
+        binary /= 10;
+        decimal += rem * base;
+        base *= 2;
+    }
+
+    while (decimal > 0) {
+        rem = decimal % 8;
+        octal = octal + rem * b;
+        b *= 10;
+        decimal /= 8;
+    }
+
+    cout << "The octal equivalent is : " << octal << endl;
+
+    return 0;
+}
