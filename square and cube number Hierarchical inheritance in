@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+class Number {
+protected:
+    double value;
+
+public:
+    void setValue(double val) {
+        value = val;
+    }
+};
+
+class Square : public Number {
+public:
+    double calculateSquare() {
+        return value * value;
+    }
+};
+
+class Cube : public Number {
+public:
+    double calculateCube() {
+        return value * value * value;
+    }
+};
+
+int main() {
+    double n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    Square m;
+    Cube k;
+
+    m.setValue(n);
+    k.setValue(n);
+
+    cout << "Square of the number: " << m.calculateSquare() << endl;
+    cout << "Cube of the number: " << k.calculateCube() << endl;
+
+    return 0;
+}
