@@ -1,0 +1,66 @@
+#include <iostream>
+
+using namespace std;
+
+class PersonalInfo {
+protected:
+    int a;
+
+public:
+    void readPersonalInfo() {
+        cout << "Enter value of a: ";
+        a = 100;
+        cout << a << endl;
+    }
+
+    void printPersonalInfo() {
+        cout << "Value of a: " << a << endl;
+    }
+};
+
+class AcademicInfo {
+protected:
+    int b;
+
+public:
+    void readAcademicInfo() {
+        cout << "Enter value of b: ";
+        b = 200;
+        cout << b << endl;
+    }
+
+    void printAcademicInfo() {
+        cout << "Value of b: " << b << endl;
+    }
+};
+
+class Student : public PersonalInfo, public AcademicInfo {
+private:
+    int c;
+
+public:
+    void readStudentInfo() {
+        readPersonalInfo();
+        readAcademicInfo();
+
+        cout << "Enter value of c: ";
+        c = 300;
+        cout << c << endl;
+    }
+
+    void printStudentInfo() {
+        printPersonalInfo();
+        printAcademicInfo();
+        cout << "Value of c: " << c << endl;
+    }
+};
+
+int main() {
+    Student student;
+
+    cout << "\nStudent Information:\n";
+    student.readStudentInfo();
+    student.printStudentInfo();
+
+    return 0;
+}
