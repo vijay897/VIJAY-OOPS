@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class hello{
+  private:
+  int bin,base=1,decimal=0,rem,octal=0,b=1;
+  public:
+  hello(){
+      bin;
+      base=1;
+      decimal=0;
+      rem;
+      octal=0;
+      b=1;
+  }
+  void input(){
+      cout<<"enter the number";
+      cin>>bin;
+  }
+  void culdata(){
+      while(bin>0){
+          rem = bin%10;
+          bin = bin/10;
+          decimal +=rem*base;
+          base = base*2;
+      }
+      while(decimal>0){
+          rem = decimal%8;
+          decimal = decimal/8;
+          octal+=rem*b;
+          b = b * 10;
+      }
+  }
+  void display(){
+      cout<<octal;
+  }
+};
+
+int main(){
+    hello in;
+    in.input();
+    in.culdata();
+    in.display();
+}
+
+
+
+
+
+
+
+
+
+
+
+
