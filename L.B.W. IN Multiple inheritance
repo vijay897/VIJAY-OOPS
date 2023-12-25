@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+
+class hello {
+protected:
+    float l;
+    float b;
+    float w;
+
+public:
+    void input() {
+        cout << "Enter the length: ";
+        cin >> l;
+        cout << "Enter the breadth: ";
+        cin >> b;
+        cout << "Enter the width: ";
+        cin >> w;
+    }
+
+    void inputDisplay() {
+        cout << "Length: " << l << endl;
+        cout << "Breadth: " << b << endl;
+        cout << "Width: " << w << endl;
+    }
+};
+
+class helloworld {
+protected:
+    float area;
+    float vol;
+
+public:
+    void inputData(float length, float breadth, float width) {
+        area = length * breadth;
+        vol = length * breadth * width;
+    }
+
+    void inputDataDisplay() {
+        cout << "Area: " << area << endl;
+        cout << "Volume: " << vol << endl;
+    }
+};
+
+class shape : public hello, public helloworld {
+public:
+    void inputIn() {
+        input();
+        inputData(l, b, w);
+    }
+
+    void output() {
+        inputDisplay();
+        inputDataDisplay();
+    }
+};
+
+int main() {
+    shape in;
+    in.inputIn();
+    in.output();
+
+    return 0;
+}
