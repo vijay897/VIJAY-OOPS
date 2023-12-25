@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+class StudentBasic {
+protected:
+    string name;
+    int age;
+    char gender;
+
+public:
+    void readBasicInfo() {
+        cout << "Enter student's basic information:\n";
+        cout << "Name?: ";
+        cin>>name;
+        cout << "Age?: ";
+        cin >> age;
+        cout << "Gender?: ";
+        cin >> gender;
+          
+    }
+
+    void printBasicInfo() {
+        cout << "Name: " << name << ", Age: " << age << ", Gender: " << gender << endl;
+    }
+};
+
+
+class StudentResult : public StudentBasic {
+private:
+    int totalMarks;
+    char grade;
+
+public:
+    void readResultInfo() {
+        cout << "Enter student's result information:\n";
+        cout << "Total Marks?: ";
+        cin >> totalMarks;
+        cout << "Grade?: ";
+        cin >> grade;
+    }
+
+    void calculatePercentage() {
+        
+        float percentage = static_cast <float>(totalMarks) / 500 * 100;
+        cout << "Total Marks: " << totalMarks << ", Percentage: " << percentage << "%, Grade: " << grade << endl;
+    }
+};
+
+int main() {
+    
+    StudentResult student;
+
+    
+    student.readBasicInfo();
+    student.printBasicInfo();
+
+    
+    student.readResultInfo();
+    student.calculatePercentage();
+
+    return 0;
+}
