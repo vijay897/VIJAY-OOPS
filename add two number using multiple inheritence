@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class first{
+  protected:
+  int a;
+  public:
+  void info(){
+      cout<<"enter the first number";
+      cin>>a;
+  }
+  void infodisplay(){
+      //cout<<a;
+  }
+};
+class second{
+    protected:
+    int b;
+    public:
+    void setdata(){
+        cout<<"enter the secong vaule";
+        cin>>b;
+    }
+    void setdatadisplay(){
+       // cout<<b;
+    }
+};
+class hello : public first,public second{
+    private:
+    int sum;
+    public:
+    void output(){
+        sum = a+b;
+    }
+    void display(){
+        cout<<sum;
+    }
+};
+int main(){
+    hello in;
+    in.info();
+    in.infodisplay();
+    in.setdata();
+    in.setdatadisplay();
+    in.output();
+    in.display();
+}
