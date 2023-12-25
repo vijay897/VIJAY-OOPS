@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class hello{
+    private:
+    int num1;
+    int num2;
+    int k;
+    public:
+    
+    void getdata(){
+        cout<<"enter the start number ";
+        cin>>num1;
+        cout<<"enter the end number ";
+        cin>>num2;
+        cout<<"enter the skiping number ";
+        cin>>k;
+    }
+    void setdata(){
+        for(int i = num1;i<=num2;i+=k+1)
+        cout<<i<<"\n";
+    }
+};
+int main(){
+    hello in;
+    in.getdata();
+    in.setdata();
+}
