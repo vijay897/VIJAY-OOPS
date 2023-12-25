@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+class Hello {
+private:
+    float side;
+    float r;
+    float sum;  
+    float area; 
+
+public:
+    void input() {
+        cout << "Enter the side of the square: ";
+        cin >> side;
+        cout << "Enter the radius of the circle: ";
+        cin >> r;
+    }
+
+    void setCal();  
+
+    void display(); 
+};
+
+
+void Hello::setCal() {
+    sum = side * side;
+    area = 3.14 * r * r;
+}
+
+
+void Hello::display() {
+    cout << "Area of the square: " << sum << endl;
+    cout << "Area of the circle: " << area << endl;
+}
+
+int main() {
+    Hello obj;
+    obj.input();
+    obj.setCal();
+    obj.display();
+
+    return 0;
+}
