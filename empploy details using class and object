@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Employee {
+private:
+    string name;
+    int employeeId;
+    double salary;
+
+public:
+    void inputDetails() {
+        cout << "Enter employee name: ";
+        
+        cin.ignore();
+        getline(cin, name);
+
+        cout << "Enter employee ID: ";
+        cin >> employeeId;
+
+        cout << "Enter employee salary: ";
+        cin >> salary;
+    }
+
+    void displayDetails() const {
+        cout << "Employee Name: " << name << endl;
+        cout << "Employee ID: " << employeeId << endl;
+        cout << "Employee Salary: " << salary << endl;
+        cout << "---------------------------" << endl;
+    }
+};
+
+int main() {
+    int num;
+
+    cout << "Enter the number of employees: ";
+    cin >> num;
+
+    Employee* employees = new Employee[num];
+
+    
+    for (int i = 0; i < num; ++i) {
+        cout << "\nEnter details for employee " << i + 1 << ":" << endl;
+        employees[i].inputDetails();
+    }
+
+    
+    cout << "\nEmployee Details:\n";
+    for (int i = 0; i < num; ++i) {
+        cout << "Details for employee " << i + 1 << ":" << endl;
+        employees[i].displayDetails();
+    }
+
+    return 0;
+}
