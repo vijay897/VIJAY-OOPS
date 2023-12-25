@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class Hello {
+public:
+  int x;
+  int y;
+
+  Hello(int x, int y) {
+    
+    this->x = x;
+    this->y = y;
+  }
+
+  void print() {
+    cout << "x = " << x << ", y = " << y << endl;
+  }
+};
+
+int main() {
+  Hello in(1, 54);
+
+  Hello* inptr = &in;
+
+  inptr->print();
+
+  return 0;
+}
