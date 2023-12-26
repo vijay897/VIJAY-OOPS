@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class unary
+{
+	int x;
+	public:
+	
+		void get(int);
+		void put();
+		unary operator++();
+};
+void unary::get(int a)
+{
+	x=a;
+}
+void unary::put()
+{
+	cout<<x;
+}
+unary unary::operator++()
+{
+	x=++x;
+}
+int main()
+{
+	unary obj;
+	obj.get(10);
+	obj.put();
+	
+	++obj;
+	obj.put();
+	return 0;
+}
