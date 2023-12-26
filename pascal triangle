@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int rows,i,j,space;
+    cout<<"enter the number ";
+    cin>>rows;
+    
+    for(i=0;i<rows;i++){
+        for(space=rows;space>i;space--){
+            cout<<" ";
+        }
+        int num =1;
+        for(j=0;j<=i;j++){
+            cout<<num;
+            num = num*(i-j)/(j+1);
+        }
+        cout<<endl;
+    }
+    
+}
